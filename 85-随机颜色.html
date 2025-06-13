@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      height: 300px;
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    // // 希尔排序
+    // function ShellSort(A, n) {
+    //   let gap, i, j, temp	//d, i, j，分别用来表示增量（间隔），外层循环中的索引以及内层循环中的索引
+    //   for (gap = Math.floor(n / 2); gap >= 1; gap = Math.floor(gap / 2))	//d 为数组长度 n 的一半，并将 d 每次减半，直到 d 缩小到1为止。
+    //     for (i = gap; i < n; ++i)		//间隔 d+1 开始遍历数组到 n，执行比较和交换操作
+    //       if (A[i] < A[i - gap]) {
+    //         temp = A[i]
+    //         for (j = i - gap; j >= 0 && temp < A[j]; j -= gap)
+    //           A[j + gap] = A[j]
+    //         A[j + gap] = temp
+    //       }
+    // }
+
+    // let num = +prompt('请输入元素个数：')
+    // // a = [20,36,58,95,62,46,36,45,13,46]
+    // let a = []
+    // for (let i = 0; i < num; i++) {
+    //   a[i] = prompt(`请输入第${i + 1} / ${num}个值：`)
+    // }
+    // console.log('希尔排序前：')
+    // console.log(a)
+    // ShellSort(a, num);
+    // console.log('希尔排序后：')
+    // console.log(a)
+
+
+
+    function getRandomColor(flag = true) {
+      if (flag) {
+        let str = '#'
+        let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+        for (let i = 0; i < 6; i++) {
+          str += arr[Math.floor(Math.random() * 16)]
+        }
+        return str
+      } else {
+        let r = Math.floor(Math.random() * 256)
+        let g = Math.floor(Math.random() * 256)
+        let b = Math.floor(Math.random() * 256)
+        return `rgb(${r},${g},${b})`
+      }
+    }
+    let s = +prompt('请输入0/1：')
+    let t = getRandomColor(s)
+    const div = document.querySelector('div')
+    div.style.backgroundColor = t
+    document.write(t)
+  </script>
+</body>
+
+</html>

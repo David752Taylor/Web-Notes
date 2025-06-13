@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 填写标签 -->
+  <!-- <script type="text/javascript">
+    // 填写JavaScript
+    const _quickSort = array => {
+      if (array.length <= 1) return array
+      const Index = Math.floor(array.length / 2)
+      const pivot = array.splice(Index, 1)[0]
+      let left = []
+      let right = []
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] < pivot) {
+          left.push(array[i])
+        }
+        else {
+          right.push(array[i])
+        }
+      }
+      return _quickSort(left).concat([pivot], _quickSort(right))
+    }
+  </script> -->
+
+
+  <!-- <script type="text/javascript">
+    function rgb2hex(sRGB) {
+      if(sRGB )
+    }
+
+  </script> -->
+
+
+
+  <!-- 填写标签 -->
+  <div id="jsCountdown">
+    <span>01天</span>
+    <span>02:</span>
+    <span>03:</span>
+    <span>04</span>
+  </div>
+  <script type="text/javascript">
+    // 填写JavaScript
+    function second(second) {
+      const day = parseInt(second / 60 / 60 / 24)
+      const hour = parseInt(second / 60 / 60 % 24)
+      const min = parseInt(second / 60 % 60)
+      const sec = parseInt(second % 60)
+      return { day, hour, min, 'second': sec }
+    }
+
+    function render(data) {
+      for (let i in data) {
+        data[i] = data[i] > 9 ? data[i] : '0' + data[i]
+      }
+      const div = document.getElementById('jsCountdown')
+      if (data.day === '00') {
+        div.children[0].classList.add('hide')
+      } else {
+        div.children[0].innerHTML = data.day + '天'
+      }
+      div.children[1].innerHTML = data.hour + ':'
+      div.children[1].innerHTML = data.min + ':'
+      div.children[1].innerHTML = data.second + ':'
+    }
+  </script>
+</body>
+
+</html>

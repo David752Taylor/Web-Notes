@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+  }
+</style>
+
+<body>
+  <div class="box">0</div>
+  <!-- <p>1231</p>
+  <button>111</button> -->
+  <!-- <script src="../js/lodash.min.js"></script> -->
+  <script>
+    // 'use strict'
+
+
+    // function fn() {
+    //   console.log('严格模式');
+    // }
+
+
+    // const btn = document.querySelector('.btn')
+    // btn.addEventListener('click', function () {
+    //   console.log(this)  //btn
+    // })
+
+    // function Person() { }
+    // Person.prototype.walk = function () {
+    //   console.log(this)  //实例化对象   
+    // }
+
+    // const obj = {}
+
+    // function fn(x, y) {
+    //   console.log(this)
+    //   console.log(x + y)
+    // }
+
+    // fn.call(obj, 1, 2)
+
+    // const btn = document.querySelector('button')
+    // btn.addEventListener('click', () => {
+    //   console.log(this);
+
+    // this.disabled = true
+    // setTimeout(function () {
+    //   this.disabled = false
+    // }.bind(this), 2000)
+    // })
+
+
+
+
+
+
+
+
+    const box = document.querySelector('div')
+    let i = 0
+    function mouseMove() {
+      box.innerHTML = i++
+    }
+    function throttle(fn, t) {
+      let timer = null
+      return function () {
+        if (!timer) {
+          timer = setTimeout(function () {
+            fn()
+            timer = null  //不能直接清除定时器
+          }, t)
+        }
+      }
+    }
+    box.addEventListener('mousemove', throttle(mouseMove, 500))
+
+    // box.addEventListener('mousemove', _.throttle(mouseMove, 3000))
+
+    // function debounce(fn, t) {
+    //   let timer
+    //   return function () {
+    //     if (timer) clearTimeout(timer)
+    //     timer = setTimeout(fn, t)
+    //   }
+    // }
+    // box.addEventListener('mousemove', debounce(mouseMove, 500))
+
+
+
+  </script>
+</body>
+
+</html>

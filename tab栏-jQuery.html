@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../Download/jquery-3.7.1/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    $(function () {
+      // $('.tab_list li').click(function () {
+      //   $(this).addClass('current').siblings().removeClass('current')
+      //   var index = $(this).index();
+      //   $('.tab_con .item').eq(index).show().siblings().hide()
+      // })
+
+      // $('div').on({
+      //   mouseenter: function () {
+      //     $(this).css('background', 'skyblue')
+      //   },
+      //   click: function () {
+      //     $(this).css('background', 'green')
+      //   },
+      //   mouseleave: function () {
+      //     $(this).css('background', 'purple')
+      //   },
+      // })
+      // $('div').on('mouseenter mouseleave', function () {
+      //   $(this).css('background', 'skyblue')
+      // })
+      // $('div').on('click', 'li', function () {
+      //   $(this).css('background', 'skyblue')
+      // })
+
+      let targetObj = {
+        id: 1
+      }
+
+      let obj = {
+        id: 1,
+        name: 'andy',
+        msg: {
+          age: 18
+        }
+      }
+
+      $.extend(true, targetObj, obj)
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- <body>
+  <div class="dad">
+    <div class="baby"></div>
+  </div>
+  <script>
+    const baby = document.querySelector('.baby')
+    console.log(baby);
+    console.log(baby.parentNode)
+    console.log(baby.parentNode.parentNode)
+  </script>
+</body> -->
+
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <script>
+    // const li = document.querySelector('ul li:first-child')
+    const ul = document.querySelector('ul')
+    const li1 = ul.children[0].cloneNode(true)
+    ul.appendChild(li1)
+  </script>
+</body>
+
+</html>

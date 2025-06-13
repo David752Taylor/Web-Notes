@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XMLHttpRequest_基础使用</title>
+</head>
+
+<body>
+  <p class="my-p"></p>
+  <script>
+
+    // 1.基本使用
+    const xhr = new XMLHttpRequest()
+
+    xhr.open('get', 'https://hmajax.itheima.net/api/province')
+
+    xhr.addEventListener('loadend', () => {
+      // console.log(xhr.response);
+      const data = JSON.parse(xhr.response)
+      // console.log(data.list);
+      document.querySelector('.my-p').innerHTML = data.list.join('<br>')
+    })
+
+    xhr.send()
+
+  </script>
+</body>
+
+</html>

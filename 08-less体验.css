@@ -1,0 +1,15 @@
+.box {
+  width: 120px;
+  width: 20px;
+  width: 200px;
+  width: 1.81333333rem;
+}
+.father {
+  color: red;
+}
+.father .son {
+  width: 100px;
+}
+.father .son:hover {
+  color: blue;
+}

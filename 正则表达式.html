@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const str = 'Spring+MyBatis+SpringMVC+SpringBoot等'
+    const reg = /spring/i
+    const s = reg.test(str)
+    const t = reg.exec(str)
+    // console.log(s);
+    // console.log(t);
+    let str0 = 'java 和 Java'
+    str0 = str0.replace(/java/ig, '前端')
+    console.log(str0);
+  </script>
+</body>
+
+</html>

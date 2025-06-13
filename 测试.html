@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <div></div> -->
+  <!-- <p>123</p> -->
+  <button>发送短信</button>
+  <script>
+    // function getSum() {
+    //   let sum = 0
+    //   for (let i = 0; i < arguments.length; i++) {
+    //     sum += arguments[i]
+    //   }
+    // }
+
+
+    // function getSum(...arr) {
+    //   console.log(arr);
+    // }
+    // getSum(2, 3)
+
+
+
+    // const fn = () => {
+    //   console.log(123);
+    // }
+    // fn()
+
+    // const fn = (x) => {
+    //   console.log(x);
+    // }
+    // fn(1)
+
+
+    // const fn = x => console.log(x);
+
+
+    // const fn = x => x + xs
+
+    // const fn = (uname) => ({ uname: uname })
+
+    // const fn = (...arr) => {
+    //   let sum = 0
+    //   for (let i = 0; i < arr.length; i++) {
+    //     sum += arr[i]
+    //   }
+    //   return sum
+    // }
+    // const result = fn(1, 2, 3)
+    // console.log(result);
+
+
+    // console.log(this);    //window
+
+
+    // function fn() {
+    //   console.log(this);
+    // }
+    // fn()                 //window
+
+
+    // const obj = {
+    //   name: 'andy',
+    //   sayHi: function () {
+    //     console.log(this);
+    //   }
+    // }
+    // obj.sayHi()          //obj
+
+
+    // const fn1 = () => console.log(this)
+    // fn1()                //window（上一层的this指向）
+
+
+    // const obj1 = {
+    //   name: 'andy',
+    //   sayHi: () => console.log(this)
+    // }
+    // obj1.sayHi()          //window(sayHi中没有this，上一级是window)
+
+
+    // const obj2 = {
+    //   uname: 'pink老师',
+    //   sayHi: function () {
+    //     // let i = 10
+    //     const count = () => console.log(this)
+    //     count()
+    //   }
+    // }
+    // obj2.sayHi()        //obj
+
+
+    // const obj3 = {
+    //   uname: 'pink老师',
+    //   sayHi: () => {
+    //     const count = () => console.log(this)
+    //     count()
+    //   }
+    // }
+    // obj3.sayHi()        //window
+
+
+
+    // const arr = [100, 60, 80]
+    // const [max, min, avg] = arr
+
+    // let a = 1
+    // let b = 2;
+    // ;[a, b] = [b, a]
+    // console.log(a, b);
+
+
+    // const { uname, age } = { uname: 'pink老师', age: 18 }
+
+
+
+    // const pig = [
+    //   { uname: '佩奇', age: 18 }
+    // ]
+    // const [{ uname, age }] = pig
+
+
+
+    // const pig = {
+    //   name: '佩奇',
+    //   family: {
+    //     mother: '猪妈妈',
+    //     father: '猪爸爸',
+    //     sister: '乔治'
+    //   }
+    // }
+    // const { name, family: { mother, father, sister } } = pig
+
+
+    // const pig = [
+    //   {
+    //     name: '佩奇',
+    //     family: {
+    //       mother: '猪妈妈',
+    //       father: '猪爸爸',
+    //       sister: '乔治'
+    //     },
+    //     age: 6
+    //   }
+    // ]
+    // const [{ name, family: { mother, father, sister }, age }] = pig
+
+    // function Pig(name) {
+    //   this.name = name
+    // }
+    // Pig.eyes = 2
+
+    // function Pig(name) {
+    //   this.name = name
+    // }
+    // const pig1 = new Pig('佩奇')
+    // pig1.sayHi = () => { console.log('hi~~'); }
+
+
+    // const arr = [1, 2, 3, 4, 5]
+    // const total = arr.reduce(function (prev, current) {
+    //   return prev + current
+    // },10)
+
+    // const total = arr.reduce((prev, current) => prev + current, 10)
+    // console.log(total);
+
+    // const re = arr.find((item) => item === 2)
+    // console.log(re);
+    // const lis = document.querySelectorAll('ul li')
+    // const li = Array.from(lis)
+
+
+    // const gift = '50g的茶叶,清洗球'
+    // document.querySelector('div').innerHTML = gift.split(',').map(item => `<span>【赠品】 ${item}</span> <br>`).join('')
+
+
+
+    // const arr = [1, 2, 3]
+    // Array.prototype.max = function () {
+    //   return Math.max(...this)
+    // }
+    // console.log(arr.max());
+
+    //抽取公共对象
+    // function Person() {
+
+    // }
+    // const ldh = new Person()
+    // console.log(ldh instanceof Person);
+    // function Woman() {
+
+    // }
+    // Woman.prototype = new Person()    //继承Person,创建新对象
+    // Woman.prototype.constructor = Woman
+    // const red = new Woman()
+    // console.log(red);
+    // console.log(Woman.prototype);   // === red
+
+
+
+    // //深拷贝
+    // const obj = {
+    //   uname: 'pink',
+    //   age: 18,
+    //   hobby: ['乒乓球', '足球'],
+    //   family: {
+    //     baby: '小pink'
+    //   }
+    // }
+    // const o = {}
+
+    // //深拷贝
+    // function deepCopy(newObj, oldObj) {
+    //   for (let k in oldObj) {
+    //     if (oldObj[k] instanceof Array) {
+    //       newObj[k] = []
+    //       deepCopy(newObj[k], oldObj[k])
+    //     } else if (oldObj[k] instanceof Object) {
+    //       newObj[k] = []
+    //       deepCopy(newObj[k], oldObj[k])
+    //     } else {
+    //       newObj[k] = oldObj[k]
+    //     }
+    //   }
+    // }
+
+    // deepCopy(o, obj)
+    // console.log(o);
+    // o.age = 20
+    // console.log(obj);
+
+
+    // function fn() {
+    //   try {
+    //     const p = document.querySelector('.p')
+    //     p.style.color = 'red'
+    //   } catch (err) {
+    //     console.log(err.message);
+    //     throw new Error('发生了错误')
+    //   }
+    //   finally {
+    //     alert('弹出对话框')  //执行
+    //   }
+    //   console.log(11);  //不执行
+    // }
+    // fn()
+
+
+
+
+
+
+
+
+    const btn = document.querySelector('button')
+    btn.addEventListener('click', function () {
+      this.disabled = true
+      setTimeout(function () {   //window调用计时器
+        this.disabled = false
+      }.bind(this), 2000)
+    })
+  </script>
+</body>
+
+</html>

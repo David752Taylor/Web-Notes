@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .dad {
+    width: 500px;
+    height: 5000px;
+    background-color: pink;
+
+  }
+
+  .baby {
+    width: 200px;
+    height: 5000px;
+    background-color: purple;
+    display: none;
+  }
+
+  .modal .footer a.submit {
+    background-color: #369;
+  }
+</style>
+
+<body>
+
+  <!-- <div class="dad">
+    <div class="baby">
+      <button class="btn">点击我</button>
+
+      <a href="https://search.bilibili.com/all?vt=47545753" class="a">bilibili</a>
+    </div>
+  </div> -->
+
+
+  <button id="delete">删除</button>
+  <button id="login">登录</button>
+
+  <script>
+
+    function Modal(title = '', message = '') {
+      this.modalBox = document.createElement('div')
+      this.modalBox.className = 'modal'
+      this.modalBox.innerHTML = `
+        <div class="header"><i>${title}</i></div>
+        <div class="body">${message}</div>
+      `
+      console.log(this.modalBox);
+
+    }
+
+
+
+
+
+    Modal.prototype.open = function () {
+      const box = document.querySelector('.modal')
+      box && box.remove()
+      document.body.append(this.modalBox)
+      this.modalBox.querySelector('i').addEventListener('click', () => {
+        this.close()
+      })
+    }
+
+    Modal.prototype.close = function () {
+      this.modalBox.remove()
+    }
+
+    document.querySelector('#delete').addEventListener('click', () => {
+      const del = new Modal('温馨提示', '您没有权限删除操作')
+      del.open()
+    })
+
+    document.querySelector('#login').addEventListener('click', () => {
+      const log = new Modal('友情提示', '您没有登录')
+      log.open()
+    })
+
+
+    // const obj = {
+    //   age: 18,      //值
+    //   gen: '女',    //字符串
+    //   arr: [1, 3],  //数组
+    //   obj: {        //子对象
+    //     a: 20,      //子对象内的 值
+    //     b: '男'     //子对象内的 字符串
+    //   }
+    // }
+
+    // let obj1 = '{"age":18,"gen":"女","arr":[1,3],"obj":{"a":20,"b":"男"}}'
+    // console.log(JSON.parse(obj1));
+
+    // // localStorage.setItem('obj',)
+    // console.log();
+    // console.log(JSON.stringify(obj));
+    // console.log(obj);
+
+
+    //     function outer() {
+    //       const a = 1
+    //       function f() {
+    //         console.log(a);
+    //       }
+    //       f()
+    //     }
+    //     outer()
+
+    // //实现数据私有
+
+    //     function count() {
+    //       let i = 0
+    //       function fn() {
+    //         i++
+    //         console.log(i)
+    //       }
+    //       return fn
+    //     }
+    //     const fun = count()
+
+
+    // fn()
+    // function fn() {
+    //   console.log('函数提升');
+
+    // }
+
+
+    // function getSum() {
+    //   let sum = 0
+    //   for (let i = 0; i < arguments.length; i++) {
+    //     sum += arguments[i]
+    //   }
+    // }
+
+
+    // function getSum(a, b, ...arr) {
+    //   console.log(arr);  // [2,3,4]
+    // }
+    // getSum(1, 2, 2, 3, 4)
+
+
+    // const fn = () => { 函数体 }
+
+    // const fn = x => { 函数体 }
+
+    // const fn = x => 语句;
+
+    // const fn = x => 返回值表达式
+
+    // const fn = (uname) => (对象)
+
+    // const fn = (uname) => ({ uname })
+
+    // const obj2 = {
+    //   uname: 'pink老师',
+    //   sayHi: function () {
+    //     // let i = 10
+    //     // const count = () => console.log(this)
+    //     const count2 = function () {
+    //       console.log(this)
+    //     }
+    //     // count()
+    //     count2()
+    //   }
+    // }
+    // obj2.sayHi()
+
+    // const fn1 = () => console.log(this)
+    // fn1()
+
+    // (function fn(参数) { 函数体 })();
+
+
+    // ; (function fn(参数) { 函数体 })()
+
+
+    // [b, a] = [a, b];
+
+    // ;[b, a] = [a, b]
+
+
+
+    // const arr = [1, 2, 3]
+    // Array.prototype.max = function () {
+    //   return Math.max(...this)
+    // }
+    // console.log(arr.max());
+
+
+    // Star.prototype = {
+    //   constructor: Star,
+    //   sing:function(){},
+    //   dance: function(){}
+    // }
+
+
+    // function Person() {
+    //   this.eyes = 2
+    //   this.head = 1
+    // }
+
+    // function Woman() {
+    //   // console.log('女人');
+    // }
+    // Woman.prototype = new Person()
+    // Woman.prototype.constructor = Woman
+    // Woman.prototype.baby = function () { }
+
+    // function Man() {
+
+    // }
+    // Man.prototype = new Person()
+    // Man.prototype.constructor = Man
+    // Man.prototype.dad = function () { }
+
+    // const red = new Woman()
+    // const blue = new Man()
+    // console.log(red);
+
+    // console.log(blue);
+
+  </script>
+</body>
+
+</html>
