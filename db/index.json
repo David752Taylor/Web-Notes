@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "npm",
+      "author": "typicode"
+    },
+    {
+      "id": 4,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "92a6",
+      "title": "今天天气不错",
+      "author": "张三"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postID": 1
+    },
+    {
+      "id": "d200",
+      "body": "json-server",
+      "postID": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

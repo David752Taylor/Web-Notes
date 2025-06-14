@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>request方法（get获取posts）</button>
+  <button>post方法（添加posts）</button>
+  <button>PUT请求（修改posts）-id</button>
+  <button>DELETE请求（删除posts）-id</button>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/1.9.0/axios.js"></script>
+<script>
+  const btns = document.querySelectorAll('button')
+  btns[0].onclick = function(){
+    axios.request(
+      // config
+      {
+      // 请求方法
+      method:'GET',
+      // 请求类型
+      url: 'http://localhost:3000/posts',
+      }
+    ).then((result) => {
+      console.log(result);
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+  btns[1].onclick = function(){
+    axios.post(
+      // url
+      'http://localhost:3000/comments',
+      // data
+      {
+        "body": "json-server",
+        "postID": 2
+      }
+      // config
+    ).then((result) => {
+        console.log(result);
+      }).catch((err) => {
+        console.log(err);
+    });
+  }
+
+/*
+axios.request(config)
+axios.get(url[, config])
+axios.delete(url[, config])
+axios.head(url[, config])
+axios.options(url[, config])
+axios.post(url[, data[, config]])
+axios.put(url[, data[, config]])
+axios.patch(url[, data[, config]])
+axios.getUri([config])
+*/
+
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>GET请求（获取posts）</button>
+  <button>POST请求（添加posts）</button>
+  <button>PUT请求（修改posts）-id</button>
+  <button>DELETE请求（删除posts）-id</button>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/1.9.0/axios.js"></script>
+<script>
+  const btns = document.querySelectorAll('button')
+  btns[0].onclick = function(){
+    axios({
+      // 请求方法
+      method:'GET',
+      // 请求类型
+      url: 'http://localhost:3000/posts/2',
+      // data: {
+      //   id:requestUrl
+      // }
+    }).then((result) => {
+      console.log(result);
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+  btns[1].onclick = function(){
+    axios({
+      method: 'POST',
+      url: 'http://localhost:3000/posts',
+      data: {
+        title: '今天天气不错',
+        author: '张三'
+      }
+    })
+  }
+  btns[2].onclick = function(){
+    axios({
+      method: 'PUT',
+      url: 'http://localhost:3000/posts/3',
+      data: {
+        title: '333',
+        author: '李四'
+      }
+    })
+  }
+  btns[3].onclick = function(){
+    axios({
+      method: 'DELETE',
+      url: 'http://localhost:3000/posts/3',
+    })
+  }
+</script>
+</html>
